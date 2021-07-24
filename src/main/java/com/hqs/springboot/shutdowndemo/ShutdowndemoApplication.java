@@ -16,26 +16,26 @@ public class ShutdowndemoApplication {
 
         System.out.println("Shutdown Demo Application started");
         /* method 1: use curl -X POST http://localhost:3333/actuator/shutdown */
-        SpringApplication.run(ShutdowndemoApplication.class, args);
+        //SpringApplication.run(ShutdowndemoApplication.class, args);
 
 
         /* method 2: use ctx.close to shutdown all application context */
-//        ConfigurableApplicationContext ctx = SpringApplication.run(ShutdowndemoApplication.class, args);
-//
-//        try {
-//            TimeUnit.SECONDS.sleep(10);
-//
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//
-//        ctx.close();
+        /*ConfigurableApplicationContext ctx = SpringApplication.run(ShutdowndemoApplication.class, args);
+        try {
+            System.out.println("10秒后停止服务！！");
+            TimeUnit.SECONDS.sleep(10);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        ctx.close();*/
 
           /* method 3 : generate a pid in a specified path, while use command to shutdown pid :
-            'cat /Users/huangqingshi/app.pid | xargs kill' */
-//        SpringApplication application = new SpringApplication(ShutdowndemoApplication.class);
-//        application.addListeners(new ApplicationPidFileWriter("/Users/huangqingshi/app.pid"));
-//        application.run();
+            'cat /usr/app.pid | xargs kill' */
+        /*SpringApplication application = new SpringApplication(ShutdowndemoApplication.class);
+        //application.addListeners(new ApplicationPidFileWriter("/usr/app.pid"));
+        application.addListeners(new ApplicationPidFileWriter());
+        application.run();*/
+
 
           /* method 4: exit this application using static method */
 //        exitApplication(ctx);
