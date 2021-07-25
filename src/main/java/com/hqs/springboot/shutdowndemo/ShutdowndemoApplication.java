@@ -34,7 +34,7 @@ public class ShutdowndemoApplication {
         //工作中一般用这种
         //SpringApplication application = new SpringApplication(ShutdowndemoApplication.class);
         //application.addListeners(new ApplicationPidFileWriter("/usr/app.pid"));
-        //application.addListeners(new ApplicationPidFileWriter());
+        //application.addListeners(new ApplicationPidFileWriter()); //pid在配置文件中指定
         //application.run();
 
 
