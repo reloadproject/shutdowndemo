@@ -31,18 +31,27 @@ public class ShutdowndemoApplication {
 
           /* method 3 : generate a pid in a specified path, while use command to shutdown pid :
             'cat /usr/app.pid | xargs kill' */
-        /*SpringApplication application = new SpringApplication(ShutdowndemoApplication.class);
+        //工作中一般用这种
+        //SpringApplication application = new SpringApplication(ShutdowndemoApplication.class);
         //application.addListeners(new ApplicationPidFileWriter("/usr/app.pid"));
-        application.addListeners(new ApplicationPidFileWriter());
-        application.run();*/
+        //application.addListeners(new ApplicationPidFileWriter());
+        //application.run();
 
 
-          /* method 4: exit this application using static method */
-//        exitApplication(ctx);
+        /* method 4: exit this application using static method */
+       /* ConfigurableApplicationContext ctx = SpringApplication.run(ShutdowndemoApplication.class, args);
+        try {
+            System.out.println("10秒后停止服务！！");
+            TimeUnit.SECONDS.sleep(10);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        exitApplication(ctx);*/
 
          /* method 5: using self-defined url in ShutDownController.java to shut down context :
             curl -X POST http://localhost:3333/shutDownContext */
-
+        //SpringApplication application = new SpringApplication(ShutdowndemoApplication.class);
+        //application.run();
     }
 
     public static void exitApplication(ConfigurableApplicationContext context) {

@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
+
 /**
  * @author huangqingshi
  * @Date 2019-08-17
@@ -26,7 +28,8 @@ public class ShutDownController implements ApplicationContextAware {
 
     @GetMapping("/")
     public String getIndex() {
-        return "OK";
+        System.out.println("nowtime = "+ new Date());
+        return "OK-->"+new Date();
     }
 
     @Override

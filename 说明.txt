@@ -1,0 +1,10 @@
+如果在linux下运行：
+
+启动：
+ nohup ./startup.sh &
+
+查看当前正在运行的任务：
+jobs
+
+停止：
+ ./shutdown.sh
